@@ -38,28 +38,28 @@ export class App extends Component{
     
     return (
       <div>
-  <Section title="Please leave your Feedback">
-  <Feedback
-          options={Object.keys(this.state)}
-          onleaveFeedback ={this.leaveFeedback}
-  /> 
-  </Section>
+        <Section title="Please leave your Feedback">
+        <Feedback
+                options={Object.keys(this.state)}
+                onleaveFeedback ={this.leaveFeedback}
+        /> 
+        </Section>
 
-        {this.countTotalFeedback()
-          ?
-          (<Section title="Statistics">  
-  <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positivePercentage ={this.countPositiveFeedbackPercentage()}
-  />
-  </Section>
-        ) : (
-          <Notification message="There is no feedback"/>
-          )}
-</div>
+              {this.countTotalFeedback()
+                ?
+                (<Section title="Statistics">  
+        <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={this.countTotalFeedback()}
+                positivePercentage ={this.countPositiveFeedbackPercentage()}
+        />
+        </Section>
+              ) : (
+                <Notification message="There is no feedback"/>
+                )}
+      </div>
     )
   }
 }
